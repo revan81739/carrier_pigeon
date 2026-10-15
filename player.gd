@@ -1,23 +1,27 @@
 extends CharacterBody2D
 
-const GRAVITY = 900.0
-const FLAP_FORCE = -350.0
-const MAX_FALL_SPEED = 500.0
+const MOVE_SPEED = 250.0
+const ROTATION_SPEED = 6.0
 
 func _physics_process(delta):
 	
-	# Apply gravity
-	velocity.y += GRAVITY * delta
+	var direction = Vector2.ZERO
 	
-	#prevent falling infinitely fast
-	velocity.y = min(velocity.y, MAX_FALL_SPEED)
+	if Input.is_action_pressed("ui_up"):
+		direction.y -= 1
+	if Input.is_action_pressed("ui_left"):
+		direction.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		direction.y += 1
+	if Input.is_action_pressed("ui_right"):
+		direction.x += 1
 	
-	#flap
-	if Input.is_action_just_pressed("ui_accept"):
-		velocity.y = FLAP_FORCE
+	if direction != Vector2.ZERO:
+		direction = direction.normalized()
 		
+	velocity = direction * MOVE_SPEED
+	
 	move_and_slide()
 	
-	#rotation
-	rotation = lerp(rotation, deg_to_rad(velocity.y / 10), 5 * delta)
-	
+	var target_rotation = deg_to_rad(velocity.y / 20.0)
+	rotation = lerp(rotation, target_rotation, ROTATION_SPEED * delta)
