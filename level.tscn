@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5buxj0sgl06t" path="res://player.tscn" id="1_u52ul"]
 [ext_resource type="Texture2D" uid="uid://bqred2bev7x55" path="res://castle.png" id="2_vonw3"]
+[ext_resource type="PackedScene" uid="uid://hctfq1eprug" path="res://archer_tower.tscn" id="3_oi3di"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
 size = Vector2(4000, 100)
@@ -30,3 +31,13 @@ texture = ExtResource("2_vonw3")
 [node name="endcastle" type="Sprite2D" parent="." unique_id=406547784]
 position = Vector2(3184, 436)
 texture = ExtResource("2_vonw3")
+
+[node name="archer_tower" parent="." unique_id=1013898752 instance=ExtResource("3_oi3di")]
+position = Vector2(1198, -367)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=975659298]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=125398147]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "health:2"

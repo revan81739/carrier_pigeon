@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+
+var health = 2
 const MOVE_SPEED = 250.0
 const ROTATION_SPEED = 6.0
 
@@ -25,3 +27,17 @@ func _physics_process(delta):
 	
 	var target_rotation = deg_to_rad(velocity.y / 20.0)
 	rotation = lerp(rotation, target_rotation, ROTATION_SPEED * delta)
+	
+func take_damage():
+		health -= 1
+		
+		print("Health:", health)
+		
+		if health <= 0:
+			die()
+
+func die():
+	
+	get_tree().reload_current_scene()
+
+	

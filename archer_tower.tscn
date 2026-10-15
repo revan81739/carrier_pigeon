@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://hctfq1eprug"]
+
+[ext_resource type="Script" uid="uid://grs2u12s8fxb" path="res://archer_tower.gd" id="1_cbvk8"]
+[ext_resource type="Texture2D" uid="uid://cfv8re0c3hsta" path="res://pngegg.png" id="2_870ov"]
+
+[node name="archer_tower" type="Node2D" unique_id=1013898752]
+script = ExtResource("1_cbvk8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=175825914]
+position = Vector2(650, 961)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_870ov")
+
+[node name="Timer" type="Timer" parent="." unique_id=1308987235]
+wait_time = 2.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1730547416]
+position = Vector2(501, 801)
