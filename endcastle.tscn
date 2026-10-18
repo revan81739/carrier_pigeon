@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c5cy55j03fy8t"]
+
+[ext_resource type="Script" uid="uid://cm67b0ogkcqbv" path="res://endcastle.gd" id="1_4ephy"]
+[ext_resource type="Texture2D" uid="uid://bauipoyyg7rsp" path="res://endcastle.png" id="1_xgmqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
+size = Vector2(353, 652)
+
+[node name="Area2D" type="Area2D" unique_id=1361307661]
+script = ExtResource("1_4ephy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=481467951]
+scale = Vector2(5.3638167, 4.8614807)
+texture = ExtResource("1_xgmqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=823356300]
+position = Vector2(-31.5, 5)
+shape = SubResource("RectangleShape2D_vyccy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bu8v3yjljso5b"]
+
+[ext_resource type="Script" uid="uid://t38hw4rcd6lp" path="res://wizard.gd" id="1_0isxx"]
+[ext_resource type="Texture2D" uid="uid://bl06qoua57mbq" path="res://YeOldyNecroGuy.png" id="2_xxhrx"]
+
+[node name="wizard" type="Node2D" unique_id=1003043163]
+script = ExtResource("1_0isxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=434167109]
+position = Vector2(286.09613, 258.95493)
+rotation = -0.0043410873
+scale = Vector2(8.045944, 7.3455462)
+texture = ExtResource("2_xxhrx")
+flip_h = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1178935483]
+position = Vector2(73, 70)
+
+[node name="Timer" type="Timer" parent="." unique_id=1212230758]
+wait_time = 4.0
+autostart = true

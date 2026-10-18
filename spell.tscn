@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://2bicssqo1477"]
+
+[ext_resource type="Script" uid="uid://biv31n5vwdg74" path="res://spell.gd" id="1_cmwj5"]
+[ext_resource type="Texture2D" uid="uid://dc32wv7ad77pq" path="res://spell.png" id="2_p3h5g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hn6kf"]
+radius = 41.59327
+
+[node name="spell" type="Area2D" unique_id=1795858513]
+script = ExtResource("1_cmwj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1503425205]
+texture = ExtResource("2_p3h5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587930982]
+position = Vector2(-27, -1)
+shape = SubResource("CircleShape2D_hn6kf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

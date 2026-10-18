@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://bn4qhwjm5kt13"]
 
 [ext_resource type="Script" uid="uid://co0m7jxfbkshk" path="res://arrow.gd" id="1_2ndhl"]
-[ext_resource type="Texture2D" uid="uid://c6tw1leoth1hp" path="res://df1bb5e08296675badcbfbc29bb8bc3a.png" id="2_acd0x"]
+[ext_resource type="Texture2D" uid="uid://baa7tmllcllla" path="res://arrow1.png" id="2_2ndhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
-size = Vector2(62, 33)
+size = Vector2(63, 15)
 
 [node name="arrow" type="Area2D" unique_id=956667649]
 script = ExtResource("1_2ndhl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=132605875]
-position = Vector2(339.5, 94.5)
-scale = Vector2(0.078, 0.056)
-texture = ExtResource("2_acd0x")
+position = Vector2(357, 74)
+scale = Vector2(1.5468751, 0.82812506)
+texture = ExtResource("2_2ndhl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2052542625]
-position = Vector2(339, 94)
+position = Vector2(355, 76)
 shape = SubResource("RectangleShape2D_vyccy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

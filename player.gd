@@ -25,13 +25,19 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	if velocity.x > 0:
+		$Sprite2D.flip_h = true
+	elif velocity.x < 0 :
+		$Sprite2D.flip_h = false
+		
+	
 	var target_rotation = deg_to_rad(velocity.y / 20.0)
 	rotation = lerp(rotation, target_rotation, ROTATION_SPEED * delta)
 	
 func take_damage():
 		health -= 1
 		
-		print("Health:", health)
+		get_tree().call_group("hud", "update_health", health)
 		
 		if health <= 0:
 			die()
@@ -40,4 +46,6 @@ func die():
 	
 	get_tree().reload_current_scene()
 
-	
+
+func _ready():
+	add_to_group("player")

@@ -1,7 +1,7 @@
 extends Node2D
 
 const ArrowScene = preload("res://arrow.tscn")
-
+@export var shoot_direction = Vector2.LEFT
 @onready var marker = $Marker2D
 @onready var timer = $Timer
 
@@ -11,6 +11,9 @@ func _ready():
 func shoot():
 	
 	var arrow = ArrowScene.instantiate()
+	
+	arrow.direction = shoot_direction.normalized()
+	
 	
 	get_tree().current_scene.add_child(arrow)
 	

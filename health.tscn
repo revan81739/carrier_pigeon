@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8cx4l5onqfn"]
+
+[ext_resource type="Script" uid="uid://ck7xaoyxh7a2f" path="res://health.gd" id="1_bydfv"]
+[ext_resource type="Texture2D" uid="uid://d3u3laarr2yqj" path="res://heart pixel art 32x32.png" id="1_ledv5"]
+
+[node name="hud" type="CanvasLayer" unique_id=509640857]
+script = ExtResource("1_bydfv")
+
+[node name="hearts" type="HBoxContainer" parent="." unique_id=1328856046]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart0" type="TextureRect" parent="hearts" unique_id=1624094496]
+layout_mode = 2
+texture = ExtResource("1_ledv5")
+stretch_mode = 3
+
+[node name="heart1" type="TextureRect" parent="hearts" unique_id=19878116]
+layout_mode = 2
+texture = ExtResource("1_ledv5")
+stretch_mode = 5

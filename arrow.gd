@@ -2,8 +2,12 @@ extends Area2D
 
 @export var speed = 450.0
 
-func _process(delta):
-	position.x -= speed * delta
+
+	
+var direction = Vector2.LEFT
+	
+func _physics_process(delta):
+	position += direction * speed * delta
 
 
 func _on_body_entered(body):
