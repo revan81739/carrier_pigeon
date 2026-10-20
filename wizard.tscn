@@ -7,14 +7,14 @@
 script = ExtResource("1_0isxx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=434167109]
-position = Vector2(286.09613, 258.95493)
+position = Vector2(1.0000305, -3.999939)
 rotation = -0.0043410873
 scale = Vector2(8.045944, 7.3455462)
 texture = ExtResource("2_xxhrx")
 flip_h = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1178935483]
-position = Vector2(73, 70)
+position = Vector2(-78, -99)
 
 [node name="Timer" type="Timer" parent="." unique_id=1212230758]
 wait_time = 4.0

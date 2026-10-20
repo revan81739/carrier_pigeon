@@ -3,9 +3,11 @@ extends Area2D
 @export var speed = 450.0
 
 
-	
 var direction = Vector2.LEFT
-	
+
+func launch(new_direction: Vector2):
+	direction = new_direction.normalized()
+		
 func _physics_process(delta):
 	position += direction * speed * delta
 

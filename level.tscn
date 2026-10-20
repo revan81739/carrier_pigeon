@@ -1,34 +1,35 @@
 [gd_scene format=3 uid="uid://imaih6do2hdy"]
 
-[ext_resource type="PackedScene" uid="uid://bu8v3yjljso5b" path="res://wizard.tscn" id="1_1ainy"]
+[ext_resource type="PackedScene" uid="uid://bunm8ncju6rwj" path="res://castle.tscn" id="1_1ainy"]
 [ext_resource type="PackedScene" uid="uid://c5cy55j03fy8t" path="res://endcastle.tscn" id="1_2orkt"]
 [ext_resource type="Texture2D" uid="uid://8nwgmjurux33" path="res://stars.png" id="1_km5ld"]
 [ext_resource type="PackedScene" uid="uid://5buxj0sgl06t" path="res://player.tscn" id="1_u52ul"]
-[ext_resource type="PackedScene" uid="uid://hctfq1eprug" path="res://archer_tower.tscn" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://c8cx4l5onqfn" path="res://health.tscn" id="4_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://dh3r0d0pdm533" path="res://ground.png" id="4_i2t4f"]
-[ext_resource type="Texture2D" uid="uid://bauipoyyg7rsp" path="res://endcastle.png" id="6_8cye3"]
-[ext_resource type="PackedScene" uid="uid://2bicssqo1477" path="res://spell.tscn" id="6_n6hdu"]
-[ext_resource type="PackedScene" uid="uid://rj13h8fp51v2" path="res://platform.tscn" id="7_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://u2lj2ff643pc" path="res://catapult.tscn" id="6_km5ld"]
+[ext_resource type="PackedScene" uid="uid://c14keytcsyyng" path="res://archer_group.tscn" id="7_i2t4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
+size = Vector2(10569, 492)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
 size = Vector2(8997, 76)
 
 [node name="level" type="Node2D" unique_id=1171716836]
 
-[node name="Area2D" parent="." unique_id=1361307661 instance=ExtResource("1_2orkt")]
-position = Vector2(8233, 334)
+[node name="Castle" parent="." unique_id=1208948712 instance=ExtResource("1_1ainy")]
+position = Vector2(-406, 429)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1261306514]
+[node name="ceiling" type="StaticBody2D" parent="." unique_id=850697400]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling" unique_id=310498070]
+position = Vector2(4248.5, -947)
+shape = SubResource("RectangleShape2D_vyccy")
+
+[node name="stars" type="Sprite2D" parent="." unique_id=1261306514]
 position = Vector2(4116, -530.99994)
 scale = Vector2(3.7303333, 1)
 texture = ExtResource("1_km5ld")
-
-[node name="wizard" parent="." unique_id=1003043163 instance=ExtResource("1_1ainy")]
-position = Vector2(1900, 374)
-
-[node name="wizard2" parent="." unique_id=993092003 instance=ExtResource("1_1ainy")]
-position = Vector2(5231, 361)
 
 [node name="Player" parent="." unique_id=601291250 instance=ExtResource("1_u52ul")]
 position = Vector2(-14, 358)
@@ -45,33 +46,13 @@ position = Vector2(3901.0005, 651)
 scale = Vector2(69.5625, 3.796875)
 texture = ExtResource("4_i2t4f")
 
-[node name="startcastle" type="Sprite2D" parent="." unique_id=631887723]
-position = Vector2(-395, 325.99997)
-scale = Vector2(5.219829, 5.2743306)
-texture = ExtResource("6_8cye3")
-
-[node name="startcastle2" type="Sprite2D" parent="." unique_id=1025411949]
-position = Vector2(-194, 507)
-scale = Vector2(3.6653986, 3.4149776)
-texture = ExtResource("6_8cye3")
-
-[node name="archer_tower" parent="." unique_id=1013898752 instance=ExtResource("3_oi3di")]
-position = Vector2(2471, -554)
-
-[node name="archer_tower2" parent="." unique_id=996672658 instance=ExtResource("3_oi3di")]
-position = Vector2(4663, -1046)
-shoot_direction = Vector2(-1, 1)
-
-[node name="archer_tower3" parent="." unique_id=2043726611 instance=ExtResource("3_oi3di")]
-position = Vector2(267, -555)
-
-[node name="archer_tower4" parent="." unique_id=458718565 instance=ExtResource("3_oi3di")]
-position = Vector2(6232, -551)
-
 [node name="health" parent="." unique_id=509640857 instance=ExtResource("4_0b4ue")]
 
-[node name="spell" parent="." unique_id=1795858513 instance=ExtResource("6_n6hdu")]
-position = Vector2(5021, 3634)
+[node name="catapult" parent="." unique_id=960200074 instance=ExtResource("6_km5ld")]
+position = Vector2(1268, 625)
 
-[node name="StaticBody2D" parent="." unique_id=912486802 instance=ExtResource("7_n6hdu")]
-position = Vector2(5371, 239)
+[node name="ArcherGroup" parent="." unique_id=1636772369 instance=ExtResource("7_i2t4f")]
+position = Vector2(1845, 596)
+
+[node name="endcastle" parent="." unique_id=1361307661 instance=ExtResource("1_2orkt")]
+position = Vector2(9643, 89)

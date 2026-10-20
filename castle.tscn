@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bunm8ncju6rwj"]
+
+[ext_resource type="Texture2D" uid="uid://dys4jqatq58fd" path="res://icon.svg" id="1_xtwgx"]
+
+[node name="Castle" type="Node2D" unique_id=1208948712]
+
+[node name="ruins" type="Sprite2D" parent="." unique_id=1408600635]
+position = Vector2(469, 205.5)
+scale = Vector2(4.484375, 0.4453125)
+texture = ExtResource("1_xtwgx")
+
+[node name="gate" type="Sprite2D" parent="." unique_id=1245430333]
+position = Vector2(788.8129, 134.77817)
+rotation = -1.5780696
+scale = Vector2(1.6518577, 1)
+texture = ExtResource("1_xtwgx")
+
+[node name="mainBuilding" type="Sprite2D" parent="." unique_id=4586281]
+position = Vector2(-1, 0)
+scale = Vector2(2.8281252, 4.0234375)
+texture = ExtResource("1_xtwgx")

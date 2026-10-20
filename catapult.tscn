@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://u2lj2ff643pc"]
+
+[ext_resource type="Texture2D" uid="uid://dys4jqatq58fd" path="res://icon.svg" id="1_cthvn"]
+[ext_resource type="Script" uid="uid://71fdfob6wg2a" path="res://catapult.gd" id="1_j37ft"]
+[ext_resource type="PackedScene" uid="uid://ewumb66wu126" path="res://boulder.tscn" id="2_220oy"]
+
+[node name="catapult" type="Node2D" unique_id=960200074]
+script = ExtResource("1_j37ft")
+boulder_scene = ExtResource("2_220oy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=781440773]
+position = Vector2(12.500008, 0)
+scale = Vector2(3.5703125, 1)
+texture = ExtResource("1_cthvn")
+
+[node name="launchPoint" type="Marker2D" parent="." unique_id=1053423506]
+position = Vector2(-172, -221)
+
+[node name="Timer" type="Timer" parent="." unique_id=1064123973]
+wait_time = 3.0
+autostart = true

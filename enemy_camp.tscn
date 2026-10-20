@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dyercavg68slp"]
+
+[ext_resource type="Texture2D" uid="uid://dys4jqatq58fd" path="res://icon.svg" id="1_7vodf"]
+
+[node name="EnemyCamp" type="Node2D" unique_id=507631818]
+
+[node name="Tent1" type="Sprite2D" parent="." unique_id=2100516323]
+position = Vector2(116.5, -34.5)
+scale = Vector2(2.8203125, 1.5390625)
+texture = ExtResource("1_7vodf")
+
+[node name="Tent2" type="Sprite2D" parent="." unique_id=2046598022]
+position = Vector2(-278.5, -11.5)
+scale = Vector2(3.3671875, 1.1484375)
+texture = ExtResource("1_7vodf")
+
+[node name="Banner" type="Sprite2D" parent="." unique_id=1658689225]
+position = Vector2(-113, -239.99998)
+scale = Vector2(0.5390625, 0.953125)
+texture = ExtResource("1_7vodf")
+
+[node name="Barrels" type="Sprite2D" parent="." unique_id=1105922190]
+position = Vector2(-383.5, 110)
+scale = Vector2(0.4765625, 1)
+texture = ExtResource("1_7vodf")
+
+[node name="Barrels2" type="Sprite2D" parent="." unique_id=511614270]
+position = Vector2(-285.99997, 141)
+rotation = 1.5502578
+scale = Vector2(0.4765625, 1)
+texture = ExtResource("1_7vodf")

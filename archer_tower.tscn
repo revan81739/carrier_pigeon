@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://obhx2avhrcg7" path="res://archer_tower1.png" id="2_cbvk8"]
 
 [node name="archer_tower" type="Node2D" unique_id=1013898752]
+position = Vector2(4, 9)
 script = ExtResource("1_cbvk8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=175825914]
-position = Vector2(716.00006, 1102)
+position = Vector2(0, -9.999756)
 scale = Vector2(3.804687, 4.2968745)
 texture = ExtResource("2_cbvk8")
 
@@ -16,4 +17,4 @@ wait_time = 2.0
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1730547416]
-position = Vector2(501, 801)
+position = Vector2(-201, -345)
