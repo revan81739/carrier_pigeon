@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://sn04qluyfa1i"]
+
+[ext_resource type="Script" uid="uid://cy3a3yjw4ru1" path="res://dialogue.gd" id="1_oi3j2"]
+[ext_resource type="FontFile" uid="uid://cbbymcolasy1k" path="res://LowresPixel-Regular.otf" id="2_758ep"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cye3"]
+bg_color = Color(0.9137255, 0.40392157, 0.54901963, 1)
+
+[node name="dialogue" type="CanvasLayer" unique_id=705661498]
+script = ExtResource("1_oi3j2")
+
+[node name="Panel" type="Panel" parent="." unique_id=1955367507]
+offset_left = -151.0
+offset_top = -355.0
+offset_right = 206.0
+offset_bottom = -219.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8cye3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=2109461003]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 12.0
+offset_right = 457.0
+offset_bottom = 111.0
+theme_override_fonts/normal_font = ExtResource("2_758ep")
+bbcode_enabled = true
+text = "[color=green]King Thėoden[/color]
+The kingdom is lost. We have been betrayed
+Find [color=cyan]Éomer[/color]
+No enemy eyes should see this letter
+"
+
+[node name="Label" type="Label" parent="Panel" unique_id=398442683]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 110.0
+offset_right = 274.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("2_758ep")
+text = "[PRESS SPACE TO CONTINUE]"

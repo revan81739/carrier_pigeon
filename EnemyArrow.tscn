@@ -4,18 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://baa7tmllcllla" path="res://arrow1.png" id="2_3gnwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
-size = Vector2(111, 16.5)
+size = Vector2(70, 13)
 
 [node name="EnemyArrow" type="Area2D" unique_id=956667649]
 script = ExtResource("1_5ps5e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=132605875]
-position = Vector2(-7, -1.5258789e-05)
-scale = Vector2(2.4765627, 1.453125)
+position = Vector2(0, -0.9999999)
+scale = Vector2(1.6523439, 0.99218744)
 texture = ExtResource("2_3gnwi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2052542625]
-position = Vector2(-8, 3)
 shape = SubResource("RectangleShape2D_vyccy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

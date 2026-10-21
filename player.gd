@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@onready var sprite = $AnimatedSprite2D
 var health = 2
 const MOVE_SPEED = 250.0
 const ROTATION_SPEED = 6.0
@@ -26,9 +26,9 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if velocity.x > 0:
-		$Sprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = true
 	elif velocity.x < 0 :
-		$Sprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = false
 		
 	
 	var target_rotation = deg_to_rad(velocity.y / 20.0)
@@ -48,4 +48,6 @@ func die():
 
 
 func _ready():
+	sprite.play("flying")
 	add_to_group("player")
+	

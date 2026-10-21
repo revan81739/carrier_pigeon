@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cda846msfcpvg" path="res://archer_group.gd" id="1_u06k8"]
 [ext_resource type="PackedScene" uid="uid://bn4qhwjm5kt13" path="res://EnemyArrow.tscn" id="2_wu65s"]
-[ext_resource type="Texture2D" uid="uid://dys4jqatq58fd" path="res://icon.svg" id="3_688vw"]
 
 [node name="ArcherGroup" type="Node2D" unique_id=1636772369]
 script = ExtResource("1_u06k8")
@@ -15,18 +14,13 @@ autostart = true
 [node name="Arrow1" type="Marker2D" parent="." unique_id=146039679]
 
 [node name="Arrow2" type="Marker2D" parent="." unique_id=2116183514]
-position = Vector2(-36, 3)
+position = Vector2(-51, 21)
 
 [node name="Arrow3" type="Marker2D" parent="." unique_id=1976254469]
-position = Vector2(112, 0)
+position = Vector2(128, 24)
 
 [node name="Arrow4" type="Marker2D" parent="." unique_id=1880564664]
-position = Vector2(72, 1)
+position = Vector2(86, 1)
 
 [node name="Arrow5" type="Marker2D" parent="." unique_id=98910485]
-position = Vector2(36, -2)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1215076601]
-position = Vector2(42.5, 46.5)
-scale = Vector2(1.2734375, 0.4140625)
-texture = ExtResource("3_688vw")
+position = Vector2(40, 26)

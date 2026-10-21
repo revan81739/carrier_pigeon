@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://imaih6do2hdy"]
 
-[ext_resource type="PackedScene" uid="uid://bunm8ncju6rwj" path="res://castle.tscn" id="1_1ainy"]
 [ext_resource type="PackedScene" uid="uid://c5cy55j03fy8t" path="res://endcastle.tscn" id="1_2orkt"]
+[ext_resource type="Script" uid="uid://j4xe0ibemphm" path="res://level.gd" id="1_8cye3"]
 [ext_resource type="Texture2D" uid="uid://8nwgmjurux33" path="res://stars.png" id="1_km5ld"]
 [ext_resource type="PackedScene" uid="uid://5buxj0sgl06t" path="res://player.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://c8cx4l5onqfn" path="res://health.tscn" id="4_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://dh3r0d0pdm533" path="res://ground.png" id="4_i2t4f"]
 [ext_resource type="PackedScene" uid="uid://u2lj2ff643pc" path="res://catapult.tscn" id="6_km5ld"]
 [ext_resource type="PackedScene" uid="uid://c14keytcsyyng" path="res://archer_group.tscn" id="7_i2t4f"]
+[ext_resource type="Texture2D" uid="uid://jkby3ehdlugb" path="res://castle1.png" id="8_km5ld"]
+[ext_resource type="PackedScene" uid="uid://sn04qluyfa1i" path="res://dialogue.tscn" id="10_2orkt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
 size = Vector2(10569, 492)
@@ -15,12 +17,20 @@ size = Vector2(10569, 492)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
 size = Vector2(8997, 76)
 
-[node name="level" type="Node2D" unique_id=1171716836]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn6kf"]
+size = Vector2(934, 311)
 
-[node name="Castle" parent="." unique_id=1208948712 instance=ExtResource("1_1ainy")]
-position = Vector2(-406, 429)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77kos"]
+size = Vector2(173, 845)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4vvs"]
+size = Vector2(174, 436)
+
+[node name="level" type="Node2D" unique_id=1171716836]
+script = ExtResource("1_8cye3")
 
 [node name="ceiling" type="StaticBody2D" parent="." unique_id=850697400]
+position = Vector2(4, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling" unique_id=310498070]
 position = Vector2(4248.5, -947)
@@ -32,7 +42,7 @@ scale = Vector2(3.7303333, 1)
 texture = ExtResource("1_km5ld")
 
 [node name="Player" parent="." unique_id=601291250 instance=ExtResource("1_u52ul")]
-position = Vector2(-14, 358)
+position = Vector2(-99, -283)
 
 [node name="ground" type="StaticBody2D" parent="." unique_id=1304783095]
 position = Vector2(-5, 15)
@@ -49,10 +59,32 @@ texture = ExtResource("4_i2t4f")
 [node name="health" parent="." unique_id=509640857 instance=ExtResource("4_0b4ue")]
 
 [node name="catapult" parent="." unique_id=960200074 instance=ExtResource("6_km5ld")]
-position = Vector2(1268, 625)
+position = Vector2(1277, 609)
 
 [node name="ArcherGroup" parent="." unique_id=1636772369 instance=ExtResource("7_i2t4f")]
 position = Vector2(1845, 596)
 
 [node name="endcastle" parent="." unique_id=1361307661 instance=ExtResource("1_2orkt")]
 position = Vector2(9643, 89)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=984435897]
+
+[node name="castle" type="Sprite2D" parent="StaticBody2D" unique_id=1594215497]
+position = Vector2(172, 21)
+scale = Vector2(11.667969, 10.179687)
+texture = ExtResource("8_km5ld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1489319925]
+position = Vector2(-75, 509.5)
+shape = SubResource("RectangleShape2D_hn6kf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=286123356]
+position = Vector2(-272.5, -91.5)
+shape = SubResource("RectangleShape2D_77kos")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=550135086]
+position = Vector2(3, 122)
+shape = SubResource("RectangleShape2D_y4vvs")
+
+[node name="dialogue" parent="." unique_id=705661498 instance=ExtResource("10_2orkt")]
+process_mode = 3

@@ -3,9 +3,13 @@ extends Node2D
 
 @export var boulder_scene : PackedScene
 @onready var launch_point = $launchPoint
-
+@onready var sprite = $AnimatedSprite2D
 func _ready():
+	sprite.play("catapult")
 	$Timer.timeout.connect(_fire)
+	
+	
+	
 	
 func _fire():
 	var boulder = boulder_scene.instantiate()
@@ -17,6 +21,8 @@ func _fire():
 	boulder.launch(
 		Vector2(-300, -900)
 	)	
+	
+
 		
 		
 	
