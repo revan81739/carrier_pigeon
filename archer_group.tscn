@@ -24,3 +24,12 @@ position = Vector2(86, 1)
 
 [node name="Arrow5" type="Marker2D" parent="." unique_id=98910485]
 position = Vector2(40, 26)
+
+[node name="Arrow6" type="Marker2D" parent="." unique_id=2055469433]
+position = Vector2(441, -20)
+
+[node name="Arrow7" type="Marker2D" parent="." unique_id=1544105267]
+position = Vector2(-145, -9)
+
+[node name="Arrow8" type="Marker2D" parent="." unique_id=2031676954]
+position = Vector2(354, 0)

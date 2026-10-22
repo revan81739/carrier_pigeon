@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://ewumb66wu126"]
 
 [ext_resource type="Script" uid="uid://t8hut6gjlq2" path="res://boulder.gd" id="1_dicgi"]
-[ext_resource type="Texture2D" uid="uid://dc32wv7ad77pq" path="res://spell.png" id="2_dgbyp"]
+[ext_resource type="Texture2D" uid="uid://e21jkmdnjl1t" path="res://Boulder.png" id="2_dicgi"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vyccy"]
-radius = 47.0
-height = 132.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_8cye3"]
+radius = 34.132095
 
 [node name="boulder" type="Area2D" unique_id=1862183987]
 script = ExtResource("1_dicgi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1877799329]
-position = Vector2(8, 2)
-scale = Vector2(0.25195006, 1.3203125)
-texture = ExtResource("2_dgbyp")
+position = Vector2(20.782303, 10.636948)
+scale = Vector2(4.3273296, 4.6624207)
+texture = ExtResource("2_dicgi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286448418]
-shape = SubResource("CapsuleShape2D_vyccy")
+position = Vector2(18, 8)
+shape = SubResource("CircleShape2D_8cye3")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1618329025]
 

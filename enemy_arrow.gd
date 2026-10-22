@@ -10,11 +10,11 @@ func launch(new_direction: Vector2):
 		
 func _physics_process(delta):
 	position += direction * speed * delta
-
+	rotation = direction.angle()
 
 func _on_body_entered(body):
 	
 	if body.has_method("take_damage"):
-		body.take_damage()
+		body.take_damage(1)
 		
 		queue_free()	

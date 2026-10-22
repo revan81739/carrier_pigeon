@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://f3vlodutm5b"
+path="res://.godot/imported/check.dialogue-ad9938f693031a396d092d69c7e76801.tres"
+
+[deps]
+
+source_file="res://check.dialogue"
+dest_files=["res://.godot/imported/check.dialogue-ad9938f693031a396d092d69c7e76801.tres"]
+
+[params]
+
+defaults=true

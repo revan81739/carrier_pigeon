@@ -33,22 +33,25 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
-size = Vector2(21, 18)
+size = Vector2(21.045242, 12.428758)
 
 [node name="Player" type="CharacterBody2D" unique_id=601291250]
+scale = Vector2(-1.116642, 1.441066)
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1725168803]
-position = Vector2(0, 4)
-scale = Vector2(0.08926194, 0.10415137)
+position = Vector2(-3.180808, 5.50631)
+scale = Vector2(0.11730205, 0.08499039)
 sprite_frames = SubResource("SpriteFrames_vyccy")
 animation = &"flying"
 frame_progress = 0.13193916
+flip_h = true
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1555582362]
-position = Vector2(1, 2)
-scale = Vector2(2, 2)
+position = Vector2(2.2388542, 7.5712423)
+scale = Vector2(1.9999998, 2)
 shape = SubResource("RectangleShape2D_vyccy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1540538842]
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(0.65, 0.65)

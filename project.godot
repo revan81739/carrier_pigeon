@@ -15,6 +15,10 @@ run/main_scene="uid://imaih6do2hdy"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*uid://c3rodes2l3gxb"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -22,7 +26,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
 
 [input]
 
@@ -59,6 +63,10 @@ ui_down={
 ]
 }
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://intro.dialogue", "res://check.dialogue")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -68,4 +76,4 @@ ui_down={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0, 0.2784314, 0.39215687, 1)
+environment/defaults/default_clear_color=Color(0, 0.19215687, 0.3254902, 1)

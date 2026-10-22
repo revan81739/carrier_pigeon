@@ -19,3 +19,8 @@ stretch_mode = 3
 layout_mode = 2
 texture = ExtResource("1_ledv5")
 stretch_mode = 5
+
+[node name="heart3" type="TextureRect" parent="hearts" unique_id=994928912]
+layout_mode = 2
+texture = ExtResource("1_ledv5")
+stretch_mode = 5

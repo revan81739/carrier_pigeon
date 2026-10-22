@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
-var health = 2
+var respawn_position : Vector2
+var health = 3
 const MOVE_SPEED = 250.0
 const ROTATION_SPEED = 6.0
 
@@ -31,11 +32,11 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = false
 		
 	
-	var target_rotation = deg_to_rad(velocity.y / 20.0)
-	rotation = lerp(rotation, target_rotation, ROTATION_SPEED * delta)
+	var target_rotation = deg_to_rad(velocity.y / 30.0)
+	rotation = lerp(sprite.rotation, target_rotation, ROTATION_SPEED * delta)
 	
-func take_damage():
-		health -= 1
+func take_damage(amount):
+		health -= amount
 		
 		get_tree().call_group("hud", "update_health", health)
 		
@@ -43,11 +44,17 @@ func take_damage():
 			die()
 
 func die():
+	health = 3
 	
-	get_tree().reload_current_scene()
-
-
+	global_position = respawn_position
+	get_tree().call_group("hud", "update_health", health)
+	
+	
+	
 func _ready():
 	sprite.play("flying")
 	add_to_group("player")
+	
+	respawn_position = global_position
+	
 	
