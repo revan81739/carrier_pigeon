@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cma6i18jg3csi" path="res://image-removebg-preview.png" id="10_8cye3"]
 [ext_resource type="PackedScene" uid="uid://dyercavg68slp" path="res://enemy_camp.tscn" id="11_2orkt"]
 [ext_resource type="PackedScene" uid="uid://cpydoielbqr75" path="res://checkpoint1.tscn" id="11_aicyk"]
+[ext_resource type="PackedScene" uid="uid://dr7renm8hoo1e" path="res://forest.tscn" id="12_aicyk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
 size = Vector2(10569, 492)
@@ -18,8 +19,11 @@ size = Vector2(10569, 492)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfqfn"]
 size = Vector2(1499.7295, 395.79468)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu152"]
+size = Vector2(5723, 614)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
-size = Vector2(8997, 76)
+size = Vector2(15805, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hn6kf"]
 size = Vector2(934, 311)
@@ -33,6 +37,10 @@ size = Vector2(174, 436)
 [node name="level" type="Node2D" unique_id=1171716836]
 script = ExtResource("1_8cye3")
 
+[node name="Forest" parent="." unique_id=76556322 instance=ExtResource("12_aicyk")]
+position = Vector2(4069.9998, 713)
+scale = Vector2(0.3600024, 0.3599991)
+
 [node name="ceiling" type="StaticBody2D" parent="." unique_id=850697400]
 position = Vector2(4, 2)
 
@@ -44,6 +52,10 @@ shape = SubResource("RectangleShape2D_vyccy")
 position = Vector2(1857.8347, -473.5134)
 scale = Vector2(1.3497971, 1.2001848)
 shape = SubResource("RectangleShape2D_xfqfn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ceiling" unique_id=1589915050]
+position = Vector2(6587.5, -344)
+shape = SubResource("RectangleShape2D_bu152")
 
 [node name="stars" type="Sprite2D" parent="." unique_id=1261306514]
 position = Vector2(1942.0007, -504)
@@ -57,13 +69,13 @@ position = Vector2(-99, -283)
 position = Vector2(-5, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=543334510]
-position = Vector2(3933.5, 698)
+position = Vector2(7337.5, 698)
 shape = SubResource("RectangleShape2D_u52ul")
 
 [node name="Polygon2D" type="Polygon2D" parent="ground" unique_id=900367100]
 position = Vector2(1184, 694)
 color = Color(0.02745098, 0.27058825, 0.047058824, 1)
-polygon = PackedVector2Array(-4, -22, -1737, -22, -1743, 32, 1987, 37, 2009, -33)
+polygon = PackedVector2Array(-4, -22, -1737, -22, -1743, 32, 14191, 69, 14124, -21)
 
 [node name="health" parent="." unique_id=509640857 instance=ExtResource("4_0b4ue")]
 
@@ -74,7 +86,7 @@ position = Vector2(1584, 598)
 position = Vector2(1947, 596)
 
 [node name="endcastle" parent="." unique_id=1361307661 instance=ExtResource("1_2orkt")]
-position = Vector2(9643, 89)
+position = Vector2(8193, -1093)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=984435897]
 

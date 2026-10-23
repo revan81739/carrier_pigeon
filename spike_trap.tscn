@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://btgmw4wcwksj4"]
+
+[ext_resource type="Script" uid="uid://cx8ig82o5nvjl" path="res://spike_trap.gd" id="1_fkc1t"]
+[ext_resource type="Texture2D" uid="uid://cc73p0wqsc6vm" path="res://spike_trap_full.png" id="1_w2bc5"]
+[ext_resource type="Script" uid="uid://r73ynp7b8iih" path="res://hitbox2.gd" id="3_3tqga"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkc1t"]
+atlas = ExtResource("1_w2bc5")
+region = Rect2(285, 0, 285, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tqga"]
+atlas = ExtResource("1_w2bc5")
+region = Rect2(570, 0, 285, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70ean"]
+atlas = ExtResource("1_w2bc5")
+region = Rect2(855, 0, 285, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t16lk"]
+atlas = ExtResource("1_w2bc5")
+region = Rect2(1140, 0, 285, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghw56"]
+atlas = ExtResource("1_w2bc5")
+region = Rect2(1425, 0, 285, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uvuo"]
+atlas = ExtResource("1_w2bc5")
+region = Rect2(1710, 0, 285, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uqbn"]
+atlas = ExtResource("1_w2bc5")
+region = Rect2(1995, 0, 285, 427)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_77kos"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkc1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tqga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70ean")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t16lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghw56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uvuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uqbn")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
+size = Vector2(190, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn6kf"]
+size = Vector2(247, 287)
+
+[node name="SpikeTrap" type="Node2D" unique_id=194336462]
+script = ExtResource("1_fkc1t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1423049863]
+position = Vector2(-1.9073486e-06, -171.5)
+scale = Vector2(0.8, 0.7985947)
+sprite_frames = SubResource("SpriteFrames_77kos")
+frame = 6
+frame_progress = 1.0
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1573042581]
+position = Vector2(-8, -315)
+script = ExtResource("3_3tqga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=222578328]
+position = Vector2(6, 17.5)
+shape = SubResource("RectangleShape2D_vyccy")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=635680640]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=931974706]
+position = Vector2(-18.5, -359.5)
+shape = SubResource("RectangleShape2D_hn6kf")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

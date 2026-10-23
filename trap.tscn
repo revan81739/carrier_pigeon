@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://box6v0yirriya"]
+
+[ext_resource type="Script" uid="uid://844d0akl7d7m" path="res://trap.gd" id="1_w2pp3"]
+[ext_resource type="Texture2D" uid="uid://t88hli6f1006" path="res://Sprite-0001.png" id="2_gix62"]
+[ext_resource type="Script" uid="uid://cdwodqam3jn33" path="res://hitbox.gd" id="3_gix62"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmoth"]
+atlas = ExtResource("2_gix62")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wwhq"]
+atlas = ExtResource("2_gix62")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74bs6"]
+atlas = ExtResource("2_gix62")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evhql"]
+atlas = ExtResource("2_gix62")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyccy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmoth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wwhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74bs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evhql")
+}],
+"loop": 0,
+"name": &"swing",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hn6kf"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77kos"]
+radius = 7.0
+
+[node name="Trap" type="Node2D" unique_id=1066974218]
+script = ExtResource("1_w2pp3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1509583737]
+position = Vector2(4, 4.5)
+scale = Vector2(0.75, 0.71875)
+sprite_frames = SubResource("SpriteFrames_vyccy")
+animation = &"swing"
+frame = 3
+frame_progress = 1.0
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1472990872]
+script = ExtResource("3_gix62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1186383084]
+position = Vector2(1, 11)
+shape = SubResource("CircleShape2D_hn6kf")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=1097315776]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=1456983338]
+position = Vector2(-7, 11)
+shape = SubResource("CircleShape2D_77kos")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

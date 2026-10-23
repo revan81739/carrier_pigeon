@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dr7renm8hoo1e"]
+
+[ext_resource type="Texture2D" uid="uid://858t7dhvi2ga" path="res://tree4.png" id="1_mvm06"]
+[ext_resource type="PackedScene" uid="uid://box6v0yirriya" path="res://trap.tscn" id="1_vmuxp"]
+[ext_resource type="Texture2D" uid="uid://ctcdo7yg45abo" path="res://tree1.png" id="2_vmuxp"]
+[ext_resource type="Texture2D" uid="uid://dev4i006uq217" path="res://tree2.png" id="3_8im6m"]
+[ext_resource type="Texture2D" uid="uid://vxl341ns0ycv" path="res://tree3.png" id="4_dvh0n"]
+[ext_resource type="PackedScene" uid="uid://btgmw4wcwksj4" path="res://spike_trap.tscn" id="6_8im6m"]
+
+[node name="Forest" type="Node2D" unique_id=76556322]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1734364848]
+position = Vector2(486, 184)
+color = Color(0, 0.1764706, 0.015686275, 1)
+polygon = PackedVector2Array(-88, -66, -1323, -324, -1283, -1558, 17875, -1797, 17875, -164)
+
+[node name="Trap" parent="." unique_id=1066974218 instance=ExtResource("1_vmuxp")]
+position = Vector2(1486, -925)
+scale = Vector2(35, 35)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1180434612]
+position = Vector2(1928.1877, -1075.1251)
+scale = Vector2(49.665813, 44.661453)
+texture = ExtResource("1_mvm06")
+
+[node name="Sprite2D13" type="Sprite2D" parent="." unique_id=689645955]
+position = Vector2(8752, -822.00006)
+scale = Vector2(52.52678, 38.94531)
+texture = ExtResource("1_mvm06")
+
+[node name="Sprite2D14" type="Sprite2D" parent="." unique_id=53957180]
+position = Vector2(13675, -985)
+scale = Vector2(48.972626, 42.01432)
+texture = ExtResource("1_mvm06")
+
+[node name="Sprite2D12" type="Sprite2D" parent="." unique_id=1100682734]
+position = Vector2(12215.001, -805)
+scale = Vector2(44.077816, 38.184895)
+texture = ExtResource("1_mvm06")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=344139689]
+position = Vector2(118.43733, -882.375)
+scale = Vector2(47.69643, 38.317707)
+texture = ExtResource("2_vmuxp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1940132551]
+position = Vector2(-743, -784)
+scale = Vector2(46, 33.666668)
+texture = ExtResource("3_8im6m")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1577693411]
+position = Vector2(5730.6875, -972)
+scale = Vector2(49.052505, 42.958332)
+texture = ExtResource("3_8im6m")
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=402938042]
+position = Vector2(18140.002, -913.00006)
+scale = Vector2(53.09498, 40.312496)
+texture = ExtResource("3_8im6m")
+flip_h = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=1868097892]
+position = Vector2(15354, -921)
+scale = Vector2(43.612507, 37.557297)
+texture = ExtResource("3_8im6m")
+
+[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=275473956]
+position = Vector2(10486, -864.00006)
+scale = Vector2(44.652485, 38.958336)
+texture = ExtResource("3_8im6m")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1989808914]
+position = Vector2(7277, -940.00006)
+scale = Vector2(48.98905, 40.88476)
+texture = ExtResource("4_dvh0n")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=761090787]
+position = Vector2(3912.5317, -1109.0626)
+scale = Vector2(46.190144, 41.7474)
+texture = ExtResource("4_dvh0n")
+
+[node name="Sprite2D15" type="Sprite2D" parent="." unique_id=2065871075]
+position = Vector2(16662, -1055)
+scale = Vector2(47.45619, 41.653645)
+texture = ExtResource("4_dvh0n")
+
+[node name="SpikeTrap" parent="." unique_id=194336462 instance=ExtResource("6_8im6m")]
+position = Vector2(7729, -76)
