@@ -1,21 +1,60 @@
 [gd_scene format=3 uid="uid://2bicssqo1477"]
 
 [ext_resource type="Script" uid="uid://biv31n5vwdg74" path="res://spell.gd" id="1_cmwj5"]
-[ext_resource type="Texture2D" uid="uid://e21jkmdnjl1t" path="res://Boulder.png" id="2_cmwj5"]
+[ext_resource type="Texture2D" uid="uid://cg61b3shpqc81" path="res://fireballspritesheet.png" id="2_cmwj5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hn6kf"]
-radius = 41.59327
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3h5g"]
+atlas = ExtResource("2_cmwj5")
+region = Rect2(0, 0, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6hl1"]
+atlas = ExtResource("2_cmwj5")
+region = Rect2(32, 0, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xttmt"]
+atlas = ExtResource("2_cmwj5")
+region = Rect2(64, 0, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x50df"]
+atlas = ExtResource("2_cmwj5")
+region = Rect2(96, 0, 32, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyccy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3h5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6hl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xttmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x50df")
+}],
+"loop": 1,
+"name": &"fireball",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hn6kf"]
+radius = 22.0
+height = 48.0
 
 [node name="spell" type="Area2D" unique_id=1795858513]
 script = ExtResource("1_cmwj5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1503425205]
-position = Vector2(-22.000002, -1.999999)
-scale = Vector2(5.1764703, 5)
-texture = ExtResource("2_cmwj5")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=915868066]
+position = Vector2(-24.000004, -6)
+scale = Vector2(1.71875, 2.2424242)
+sprite_frames = SubResource("SpriteFrames_vyccy")
+animation = &"fireball"
+frame_progress = 0.7940416
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587930982]
 position = Vector2(-27, -1)
-shape = SubResource("CircleShape2D_hn6kf")
+shape = SubResource("CapsuleShape2D_hn6kf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

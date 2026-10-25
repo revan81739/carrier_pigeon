@@ -1,20 +1,30 @@
 [gd_scene format=3 uid="uid://hctfq1eprug"]
 
 [ext_resource type="Script" uid="uid://grs2u12s8fxb" path="res://archer_tower.gd" id="1_cbvk8"]
-[ext_resource type="Texture2D" uid="uid://obhx2avhrcg7" path="res://archer_tower1.png" id="2_cbvk8"]
+[ext_resource type="Texture2D" uid="uid://dkvua0qvkvfy6" path="res://archertower2.png" id="2_cbvk8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn6kf"]
+size = Vector2(368, 1052)
 
 [node name="archer_tower" type="Node2D" unique_id=1013898752]
 position = Vector2(4, 9)
 script = ExtResource("1_cbvk8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=175825914]
-position = Vector2(0, -9.999756)
-scale = Vector2(3.804687, 4.2968745)
+position = Vector2(125.75002, -418.8125)
+scale = Vector2(14.601562, 13.880858)
 texture = ExtResource("2_cbvk8")
 
 [node name="Timer" type="Timer" parent="." unique_id=1308987235]
 wait_time = 2.0
-autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1730547416]
-position = Vector2(-201, -345)
+position = Vector2(-156, -482)
+
+[node name="Trigger" type="Area2D" parent="." unique_id=2136404458]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=1013606386]
+position = Vector2(-2256, -498)
+shape = SubResource("RectangleShape2D_hn6kf")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

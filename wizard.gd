@@ -2,7 +2,7 @@ extends Node2D
 
 
 const spellScene = preload("res://spell.tscn")
-
+var activated = false
 @onready var marker = $Marker2D
 @onready var timer = $Timer
 
@@ -26,3 +26,14 @@ func shoot():
 	).normalized()
 		
 		
+
+
+func _on_trigger_body_entered(body: Node2D) -> void:
+	if activated:
+		return
+		
+	if body.is_in_group("player"):
+		activated = true
+		
+		$Timer.start()
+	

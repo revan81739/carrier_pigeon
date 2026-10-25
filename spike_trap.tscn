@@ -62,10 +62,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
-size = Vector2(190, 105)
+size = Vector2(190, 324)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hn6kf"]
-size = Vector2(247, 287)
+size = Vector2(291.5, 651)
 
 [node name="SpikeTrap" type="Node2D" unique_id=194336462]
 script = ExtResource("1_fkc1t")
@@ -82,13 +82,13 @@ position = Vector2(-8, -315)
 script = ExtResource("3_3tqga")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=222578328]
-position = Vector2(6, 17.5)
+position = Vector2(6, 127)
 shape = SubResource("RectangleShape2D_vyccy")
 
 [node name="Trigger" type="Area2D" parent="." unique_id=635680640]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=931974706]
-position = Vector2(-18.5, -359.5)
+position = Vector2(-16.25, -331.5)
 shape = SubResource("RectangleShape2D_hn6kf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
