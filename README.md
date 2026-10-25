@@ -1,4 +1,4 @@
-deliver a message via pigeon post while dodging arrows and purple robed sorcerors that weirdly want to eat your flesh for some reason(foreshadowing)
+deliver a message via pigeon post while dodging arrows, sorcerors, and booby traps 
 its on itch.io try it out https://chuffchuff8173.itch.io/carrier-pigeon
-made it in godot in 3 days (first time in godot) so ha
+wasd to move. collect the rune in the forest for extra speed. 
 have a blessed day
