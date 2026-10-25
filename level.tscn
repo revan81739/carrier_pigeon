@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://imaih6do2hdy"]
 
-[ext_resource type="PackedScene" uid="uid://c5cy55j03fy8t" path="res://endcastle.tscn" id="1_2orkt"]
 [ext_resource type="Script" uid="uid://j4xe0ibemphm" path="res://level.gd" id="1_8cye3"]
 [ext_resource type="Texture2D" uid="uid://8nwgmjurux33" path="res://stars.png" id="1_km5ld"]
 [ext_resource type="PackedScene" uid="uid://5buxj0sgl06t" path="res://player.tscn" id="1_u52ul"]
@@ -11,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cma6i18jg3csi" path="res://image-removebg-preview.png" id="10_8cye3"]
 [ext_resource type="PackedScene" uid="uid://dyercavg68slp" path="res://enemy_camp.tscn" id="11_2orkt"]
 [ext_resource type="PackedScene" uid="uid://cpydoielbqr75" path="res://checkpoint1.tscn" id="11_aicyk"]
+[ext_resource type="PackedScene" uid="uid://bkhe0yr451tv" path="res://end.tscn" id="12_8b0r0"]
 [ext_resource type="PackedScene" uid="uid://dr7renm8hoo1e" path="res://forest.tscn" id="12_aicyk"]
+[ext_resource type="AudioStream" uid="uid://btvmdtgfrwo36" path="res://Honorable_Cause_loop.wav" id="13_8b0r0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
 size = Vector2(10569, 492)
@@ -21,6 +22,9 @@ size = Vector2(1499.7295, 395.79468)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu152"]
 size = Vector2(5723, 614)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdf1a"]
+size = Vector2(2473, 584)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
 size = Vector2(15805, 76)
@@ -57,6 +61,14 @@ shape = SubResource("RectangleShape2D_xfqfn")
 position = Vector2(6587.5, -344)
 shape = SubResource("RectangleShape2D_bu152")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ceiling" unique_id=965607793]
+position = Vector2(2645.5, -379)
+shape = SubResource("RectangleShape2D_sdf1a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ceiling" unique_id=701381153]
+position = Vector2(13399, 360)
+polygon = PackedVector2Array(-221, 177, -1458, 289, 138, -498, 386, -588, 408, 244, -1413, 289)
+
 [node name="stars" type="Sprite2D" parent="." unique_id=1261306514]
 position = Vector2(1942.0007, -504)
 scale = Vector2(3.7303333, 1)
@@ -84,9 +96,6 @@ position = Vector2(1584, 598)
 
 [node name="ArcherGroup" parent="." unique_id=1636772369 instance=ExtResource("7_i2t4f")]
 position = Vector2(1947, 596)
-
-[node name="endcastle" parent="." unique_id=1361307661 instance=ExtResource("1_2orkt")]
-position = Vector2(8193, -1093)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=984435897]
 
@@ -128,3 +137,11 @@ scale = Vector2(3.7303333, 1)
 
 [node name="Checkpoint1" parent="." unique_id=1253630214 instance=ExtResource("11_aicyk")]
 position = Vector2(3154, 479)
+
+[node name="end" parent="." unique_id=1493408207 instance=ExtResource("12_8b0r0")]
+position = Vector2(12199, 696)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1303005753]
+stream = ExtResource("13_8b0r0")
+volume_db = -9.701
+autoplay = true

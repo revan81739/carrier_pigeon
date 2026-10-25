@@ -1,9 +1,10 @@
 extends CharacterBody2D
-
+var rune_active = false
+var rune_timer=0.0
 @onready var sprite = $AnimatedSprite2D
 var respawn_position : Vector2
 var health = 3
-const MOVE_SPEED = 250.0
+var MOVE_SPEED = 250.0
 const ROTATION_SPEED = 6.0
 
 func _physics_process(delta):
@@ -30,11 +31,14 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = true
 	elif velocity.x < 0 :
 		$AnimatedSprite2D.flip_h = false
-		
-	
 	var target_rotation = deg_to_rad(velocity.y / 30.0)
 	rotation = lerp(sprite.rotation, target_rotation, ROTATION_SPEED * delta)
-	
+	if rune_active:
+		rune_timer -=delta
+		if rune_timer<= 0:
+			rune_active = false
+			MOVE_SPEED=250.0
+			print("Rune expired")
 func take_damage(amount):
 		health -= amount
 		
@@ -57,4 +61,9 @@ func _ready():
 	
 	respawn_position = global_position
 	
+func activate_rune():
 	
+	rune_active=true
+	MOVE_SPEED=435.0
+	rune_timer=6.0
+	print("Rune activated")	

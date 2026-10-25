@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cvrb206rbmigg"]
+
+[ext_resource type="Script" uid="uid://d25sbw7yofoec" path="res://rune.gd" id="1_ad464"]
+[ext_resource type="Texture2D" uid="uid://binyj1xn3w0bb" path="res://rune.png" id="1_gird2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
+size = Vector2(90, 114)
+
+[node name="rune" type="Area2D" unique_id=919109720]
+script = ExtResource("1_ad464")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1859106131]
+position = Vector2(21.750004, -39)
+scale = Vector2(3.5781252, 3.625)
+texture = ExtResource("1_gird2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=518900984]
+position = Vector2(27, -37)
+shape = SubResource("RectangleShape2D_vyccy")
+
+[node name="Timer" type="Timer" parent="." unique_id=1693087951]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

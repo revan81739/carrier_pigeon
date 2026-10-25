@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cy3a3yjw4ru1" path="res://dialogue.gd" id="1_oi3j2"]
 
 [node name="dialogue" type="CanvasLayer" unique_id=758452635]
+process_mode = 3
 script = ExtResource("1_oi3j2")
 
 [node name="Panel" type="Panel" parent="." unique_id=1939445174]

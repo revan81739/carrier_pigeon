@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bkhe0yr451tv"]
+
+[ext_resource type="Script" uid="uid://c5prd3nnrr8ca" path="res://end.gd" id="1_egc6y"]
+[ext_resource type="Texture2D" uid="uid://bv5i2hlw6gccn" path="res://end.png" id="1_n735c"]
+[ext_resource type="FontFile" uid="uid://cbbymcolasy1k" path="res://LowresPixel-Regular.otf" id="3_lt2ag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyccy"]
+size = Vector2(181, 235)
+
+[node name="end" type="Node2D" unique_id=1493408207]
+script = ExtResource("1_egc6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1360230444]
+position = Vector2(601, -613)
+scale = Vector2(15.808593, 12.234374)
+texture = ExtResource("1_n735c")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=1093159124]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=632142002]
+position = Vector2(1331.5, -988.5)
+shape = SubResource("RectangleShape2D_vyccy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=757324666]
+process_mode = 3
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1440194541]
+offset_left = 1068.0
+offset_top = -1114.0
+offset_right = 1375.0
+offset_bottom = -989.0
+theme_override_fonts/font = ExtResource("3_lt2ag")
+theme_override_font_sizes/font_size = 32
+text = "Mission completed
+thanks for playing"
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]

@@ -16,7 +16,7 @@ scale = Vector2(14.601562, 13.880858)
 texture = ExtResource("2_cbvk8")
 
 [node name="Timer" type="Timer" parent="." unique_id=1308987235]
-wait_time = 2.0
+wait_time = 1.5
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1730547416]
 position = Vector2(-156, -482)

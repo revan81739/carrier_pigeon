@@ -21,7 +21,6 @@ flip_h = true
 position = Vector2(-75, -981)
 
 [node name="Timer" type="Timer" parent="." unique_id=1212230758]
-wait_time = 4.0
 
 [node name="archer_tower" parent="." unique_id=1013898752 instance=ExtResource("3_34mad")]
 position = Vector2(-306, -64)

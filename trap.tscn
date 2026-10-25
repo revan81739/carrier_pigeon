@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn6kf"]
-radius = 6.0
+radius = 4.1231055
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_77kos"]
 radius = 7.0
@@ -61,7 +61,7 @@ frame_progress = 1.0
 script = ExtResource("3_gix62")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1186383084]
-position = Vector2(1, 11)
+position = Vector2(3, 12)
 shape = SubResource("CircleShape2D_hn6kf")
 
 [node name="Trigger" type="Area2D" parent="." unique_id=1097315776]

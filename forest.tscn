@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://vxl341ns0ycv" path="res://tree3.png" id="4_dvh0n"]
 [ext_resource type="PackedScene" uid="uid://btgmw4wcwksj4" path="res://spike_trap.tscn" id="6_8im6m"]
 [ext_resource type="PackedScene" uid="uid://bu8v3yjljso5b" path="res://wizard.tscn" id="8_d8dn4"]
+[ext_resource type="PackedScene" uid="uid://cvrb206rbmigg" path="res://rune.tscn" id="9_5rndp"]
 
-[node name="Forest" type="Node2D" unique_id=76556322]
+[node name="forest" type="Node2D" unique_id=76556322]
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1734364848]
 position = Vector2(486, 184)
@@ -94,7 +95,13 @@ scale = Vector2(47.45619, 41.653645)
 texture = ExtResource("4_dvh0n")
 
 [node name="SpikeTrap" parent="." unique_id=194336462 instance=ExtResource("6_8im6m")]
-position = Vector2(8117, -76)
+position = Vector2(8117, 0)
+
+[node name="SpikeTrap2" parent="." unique_id=1834682871 instance=ExtResource("6_8im6m")]
+position = Vector2(11339, -19)
 
 [node name="wizard" parent="." unique_id=1003043163 instance=ExtResource("8_d8dn4")]
 position = Vector2(18114, -25)
+
+[node name="rune" parent="." unique_id=919109720 instance=ExtResource("9_5rndp")]
+position = Vector2(9725, -449)
